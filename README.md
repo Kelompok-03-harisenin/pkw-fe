@@ -11,4 +11,5 @@ npm run dev
 - Vite
 - React Router
 - Zustand
+- Tailwind
 - Axios
