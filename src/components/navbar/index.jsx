@@ -1,5 +1,5 @@
-import image1 from '../../assets/'
-import image2 from '../../assets/'
+import image1 from '../../assets/layer-2.svg'
+import image2 from '../../assets/vector-stroke.svg'
 
 const index = () => {
     return (
