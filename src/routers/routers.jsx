@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Index from "../pages/index";
+import Homepage from "../pages/index/homepage";
 
 const routers = () => {
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <Index/>
+            element: <Homepage/>
         }
     ])
 
