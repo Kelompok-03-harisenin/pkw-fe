@@ -58,7 +58,7 @@ const index = () => {
         {/* end hero Section */}
 
         {/* Start category section */}
-    <div className='flex flex-col gap-[18px] pt-[98px] w-[1080px]'>
+    <div className='flex flex-col gap-[18px] pt-[98px] '>
         <div>
             <h1 className='text-[#141414] text-center font-semibold text-[31px] '>Our Gallery</h1>
             <p className='text-center font-normal text-[#BFBFBF] text-[20px] '>Make yourself one of us</p>
@@ -70,10 +70,11 @@ const index = () => {
                 <li><a className=' p-[10px] hover:text-[#E60023] hover:border-b-[1px] hover:border-[#E60023] focus:text-[#E60023] focus:border-b-[1px] focus:border-[#E60023]' href="#">Fashion</a></li>
                 <li><a className=' p-[10px] hover:text-[#E60023] hover:border-b-[1px] hover:border-[#E60023] focus:text-[#E60023] focus:border-b-[1px] focus:border-[#E60023]' href="#">Street Photography</a></li>
                 <li><a className=' p-[10px] hover:text-[#E60023] hover:border-b-[1px] hover:border-[#E60023] focus:text-[#E60023] focus:border-b-[1px] focus:border-[#E60023]' href="#">Travel</a></li>
+                <li><a className=' p-[10px] hover:text-[#E60023] hover:border-b-[1px] hover:border-[#E60023] focus:text-[#E60023] focus:border-b-[1px] focus:border-[#E60023]' href="#">More</a></li>
             </ul>
         </div>
     
-    <div className='flex flex-col gap-[31px]'>
+    <div className='flex flex-col gap-[31px] w-[1080px]'>
         <div className='flex flex-col gap-[5px]'>
             <h1 className='text-[45px] font-semibold'>Nature</h1>
             <p className='text-[22px] font-normal'>Footsteps on Earth, Breathing Peace into Every Leaf</p>
