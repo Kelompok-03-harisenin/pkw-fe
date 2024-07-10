@@ -13,7 +13,7 @@ import NavBar from '../../components/navbar/index.jsx'
 const index = () => {
     return(
         <>
-<div className='flex justify-center'>
+<div className='flex justify-center font-inter'>
     <div className='flex flex-col w-fit overflow-hidden'>
 
         <div>
