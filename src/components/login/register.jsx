@@ -45,9 +45,7 @@ const register = () => {
           <div className="">
             <div className="relative text-[20px] text-[#000]">Already have an account ?</div>
           </div>
-          <button className="sign-up" id="signUp">
-            <img className="sign-up-child" alt="" src="./public/rectangle-26.svg" />
-
+          <button>
             <div className="relative text-[20px] text-[#000]">Log in</div>
           </button>
         </div>
