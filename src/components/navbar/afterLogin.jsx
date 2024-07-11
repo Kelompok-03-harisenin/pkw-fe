@@ -1,7 +1,7 @@
 import image1 from '../../assets/layer-2.svg'
 import image2 from '../../assets/vector-stroke.svg'
 
-const index = () => {
+const afterLogin = () => {
     return (
     <header className="w-full bg-[#f7f7f7] overflow-hidden items-center pt-[51px] px-[0] pb-[0] gap-[78px] leading-[normal] tracking-[normal]">
       <section className="w-[1260px] flex-row justify-end pt-[0] pl-[268px] pr-[74px] pb-[25px] box-border">
@@ -22,8 +22,8 @@ const index = () => {
                   <button className="cursor-pointer border-[0] px-[30px] py-[10px] bg-transparent rounded-[4px] flex flex-row items-start justify-start">
                     <a className="no-underline relative text-[18px] text-[#e60023] text-left flex min-w-[47px] whitespace-nowrap cursor-pointer">Login</a>
                   </button>
-                  <button className="cursor-pointer border-[0] px-[30px] py-[10px] bg-[#e60023] flex-row justify-start hover:bg-[#ff264a]">
-                    <a className="no-underline flex justify-center relative text-[18px] text-[#fff] text-left flex min-w-[71px] whitespace-nowrap">Register</a>
+                  <button className="cursor-pointer border-[0] px-[30px] py-[10px] flex-row justify-start">
+                    <a className="no-underline flex justify-center relative text-[18px] text-[#e60023] text-left flex min-w-[71px] whitespace-nowrap hover:text-[#ff264a]">Log out</a>
                   </button>
                 </div>
               </div>
@@ -48,4 +48,4 @@ const index = () => {
 }
 
 
-export default index
+export default afterLogin
