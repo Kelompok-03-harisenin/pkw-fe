@@ -2,12 +2,6 @@ const index = () => {
     return (
         <div className="w-full relative overflow-hidden items-center pt-[40px] px-[440px] pb-[218px] gap-[63.3px] leading-[normal] tracking-[normal] text-left text-[24px] text-[#000]">
       <div className="main">
-        <img
-          class="layer-2-icon"
-          loading="lazy"
-          alt=""
-          src="./public/layer-2.svg"
-        />
       </div>
       <div className="w-[600px] h-[468px] [box-shadow:0_4px_24px_rgba(0,_0,_0,_0.25)] rounded-[24px] items-start pt-[48px] px-[73px] pb-[63px] gap-[40px] max-w-full">
         <div className="login-form-child"></div>
