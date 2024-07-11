@@ -21,7 +21,7 @@ const index = () => {
             type="text"
           />
         </div>
-        <div className="self-stretch flex flex-col items-start justify-start gap-[44px] max-w-full cursor-pointer" id="loginButtonContainer">
+        <div className="self-stretch flex flex-col items-start justify-start gap-[44px] max-w-full cursor-pointer">
           <button className="cursor-pointer border-[0] pl-[64px] pr-[20px] py-[10px] bg-[#e60023] self-stretch rounded-[24px] flex flex-row items-start justify-center box-border max-w-full hover:bg-[#ff264a]">
             <div className="relative text-[20px] font-light text-[#fff] text-left inline-block min-w-[92px] whitespace-nowrap">Log in</div>
           </button>
