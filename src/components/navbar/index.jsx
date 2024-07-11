@@ -7,7 +7,7 @@ const index = () => {
         <div className="flex-[1] flex-col justify-start gap-[50px]">
           <div className="[box-shadow:0_4px_8px_rgba(0,_0,_0,_0.05)] bg-[#fff] flex-col justify-start px-[20px] py-[30px] box-border gap-[30px] top-[0] sticky max-w-full">
             <div className="self-stretch rounded-[79px] flex flex-row items-end justify-between gap-[49px] max-w-full">
-              <img className="pl-[46px] pb-[8px]"src={Image1} alt="" />
+              <img className="pl-[46px] cursor-pointer pb-[8px]"src={Image1} alt="" />
 
              
 
