@@ -23,7 +23,7 @@ const ProfilePage = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen">
-      {/* Profile Section */}
+      
       <section className="max-w-3xl mx-auto pt-8 bg-white rounded-lg shadow-md overflow-hidden">
         <div className="relative h-40 bg-cover bg-center" style={{backgroundImage: 'url("/path-to-cover-image.jpg")'}}>
           <img
@@ -76,10 +76,10 @@ const ProfilePage = () => {
         </div>
       </section>
 
-      {/* Photo Grid */}
+      
       <section className="max-w-7xl mx-auto mt-8 px-4 pb-8">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          {/* Replace with your actual images */}
+         
           {Array.from({ length: 20 }).map((_, index) => (
             <div key={index} className="aspect-square bg-gray-200 rounded-md overflow-hidden">
               <img
