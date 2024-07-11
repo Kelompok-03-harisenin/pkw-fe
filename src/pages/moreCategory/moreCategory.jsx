@@ -4,7 +4,7 @@ const index = () => {
     return(
         <>
     <div className='font-inter'>
-        <div className="flex justify-center gap-[153px] h-[190px]">
+        <div className="flex justify-center gap-[153px] h-[190px] mt-[106px] lg:px-[100px]">
             <div className="w-[653px] break-words">
                 <h1 className="font-semibold text-[40px]">CaptureCloud</h1>
                 <p className="font-normal text-[26px]">Capturing Every Precious Second, Uniting in Visual Harmony that Connects Us All</p>
@@ -140,7 +140,6 @@ const index = () => {
         </div>
 
 
-        
     </div>
 </div>
         </>

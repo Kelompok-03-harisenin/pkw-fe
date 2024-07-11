@@ -21,7 +21,7 @@ const index = () => {
            
         </div>
         {/* start hero Section */}
-        <div className='flex flex-row gap-[15px] justify-center'>
+        <div className='flex flex-row gap-[15px] justify-center' >
             <div className='flex flex-col gap-[15px]'>
                 <div className='overflow-hidden'>
                     <img className='hover:scale-[1.1] ease-in-out duration-300' src={deerImg} alt="" /> 
@@ -59,7 +59,7 @@ const index = () => {
         {/* end hero Section */}
 
         {/* Start category section */}
-    <div className='flex flex-col gap-[18px] pt-[98px] '>
+    <div className='flex flex-col gap-[18px] pt-[98px]'>
         <div>
             <h1 className='text-[#141414] text-center font-semibold text-[31px] '>Our Gallery</h1>
             <p className='text-center font-normal text-[#BFBFBF] text-[20px] '>Make yourself one of us</p>
