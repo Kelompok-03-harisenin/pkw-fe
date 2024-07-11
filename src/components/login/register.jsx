@@ -3,24 +3,27 @@ const register = () => {
         <div className="w-full relative overflow-hidden items-center pt-[40px] px-[440px] pb-[218px] gap-[63.3px] leading-[normal] tracking-[normal] text-left text-[24px] text-[#000]">
       <div className="main">
       </div>
-      <div className="w-[600px] h-[468px] [box-shadow:0_4px_24px_rgba(0,_0,_0,_0.25)] rounded-[24px] items-start pt-[48px] px-[73px] pb-[63px] gap-[40px] max-w-full">
+      <div className="w-[600px] h-[480px] [box-shadow:0_4px_24px_rgba(0,_0,_0,_0.25)] rounded-[24px] items-start pt-[48px] px-[73px] pb-[63px] gap-[40px] max-w-full">
         <div className="login-form-child"></div>
         <div className="flex flex-row items-start justify-start pt-[0] px-[0] pb-[20px] text-[28px]">
           <h1 className="create-account">Let's create your account</h1>
         </div>
+
+        <div className="flex-col pt-[0] px-[0] pb-[20px] gap-[40px]">
+          <input
+            className="w-full border-[0] outline-[0] bg-[rgba(217,_217,_217,_0.5)] h-[40px] rounded-[20px] flex-row p-[20px] box-border font-light text-[20px] text-[rgba(0,_0,_0,_0.5)] min-w-[250px]"
+            placeholder="Enter your name"
+            type="text"
+          />
+          </div>
+
         <div className="flex-col pt-[0] px-[0] pb-[20px] gap-[40px]">
           <input
             className="w-full border-[0] outline-[0] bg-[rgba(217,_217,_217,_0.5)] h-[40px] rounded-[20px] flex-row p-[20px] box-border font-light text-[20px] text-[rgba(0,_0,_0,_0.5)] min-w-[250px]"
             placeholder="Enter your email"
             type="text"
           />
-        </div>
-        <div className="flex-col pt-[0] px-[0] pb-[20px] gap-[40px]">
-          <input
-            className="w-full border-[0] outline-[0] bg-[rgba(217,_217,_217,_0.5)] h-[40px] rounded-[20px] flex-row p-[20px] box-border font-light text-[20px] text-[rgba(0,_0,_0,_0.5)] min-w-[250px]"
-            placeholder="Confirm your email"
-            type="text"
-          />
+
         </div>
         <div className="flex-col pt-[0] px-[0] pb-[20px] gap-[40px]">
           <input
@@ -28,7 +31,9 @@ const register = () => {
             placeholder="Create a password"
             type="text"
           />
+
         </div>
+
         <h5 className="text-[10px] flex justify-center pb-[20px]"
                 >By signing up, you accept Pinterest Terms of Service and Privacy Policy
               </h5>
