@@ -27,39 +27,39 @@ const afterLogin = () => {
             <nav className="mt-[24px] mx-[0] mb-[0px] rounded-[79px] flex-row justify-center text-left text-[18px] text-[#353535] flex">
               <ul className='flex gap-[53px] cursor-pointer'>
                 <li className="after:content-[''] after:h-[2px] after:w-[0] after:bg-[black] after:block after:opacity-0 after:[transition:.4s] hover:after:opacity-100 hover:after:w-full">
-                  <a href={"/category/1"}>
+                  <Link to={"/category/1"}>
                     Nature
-                  </a>
+                  </Link>
                 </li>
                 <li className="after:content-[''] after:h-[2px] after:w-[0] after:bg-[black] after:block after:opacity-0 after:[transition:.4s] hover:after:opacity-100 hover:after:w-full">
-                  < a href="/category/2">
+                  < Link to="/category/2">
                     Wallpaper
-                  </a>
+                  </Link>
                 </li>
                 <li className="after:content-[''] after:h-[2px] after:w-[0] after:bg-[black] after:block after:opacity-0 after:[transition:.4s] hover:after:opacity-100 hover:after:w-full">
-                  <a href="/category/3">
+                  <Link to="/category/3">
                     Fashion
-                  </a>
+                  </Link>
                 </li>
                 <li className="after:content-[''] after:h-[2px] after:w-[0] after:bg-[black] after:block after:opacity-0 after:[transition:.4s] hover:after:opacity-100 hover:after:w-full">
-                  <a href="/category/4">
+                  <Link to="/category/4">
                     Street Photography
-                  </a>
+                  </Link>
                 </li>
                 <li className="after:content-[''] after:h-[2px] after:w-[0] after:bg-[black] after:block after:opacity-0 after:[transition:.4s] hover:after:opacity-100 hover:after:w-full">
-                  <a href="/category/5">
+                  <Link to="/category/5">
                     Travel
-                  </a>
+                  </Link>
                 </li>
                 <li className="after:content-[''] after:h-[2px] after:w-[0] after:bg-[black] after:block after:opacity-0 after:[transition:.4s] hover:after:opacity-100 hover:after:w-full">
-                  <a href="/category/6">
+                  <Link to="/category/6">
                     People
-                  </a>
+                  </Link>
                 </li>
                 <li className="after:content-[''] after:h-[2px] after:w-[0] after:bg-[black] after:block after:opacity-0 after:[transition:.4s] hover:after:opacity-100 hover:after:w-full">
-                  <a href="/category/7">
+                  <Link to="/category/7">
                     Etc
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
