@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import Image1 from '../../assets/layer-2.svg'
 
 const ProfilePage = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -25,13 +26,36 @@ const ProfilePage = () => {
     <div className="bg-gray-100 min-h-screen">
       
       <section className="max-w-3xl mx-auto pt-8 bg-white rounded-lg shadow-md overflow-hidden">
-        <div className="relative h-40 bg-cover bg-center" style={{backgroundImage: 'url("/path-to-cover-image.jpg")'}}>
+        {isEditing ? (
+          <div className="flex flex-col h-40 bg-cover bg-center justify-center items-center gap-4 pt-10">
+              <img
+                src={Image1}
+                alt="Profile"
+                className="bottom-0 left-1/2 transform w-32 h-32 rounded-full border-4 border-white object-cover"
+              />
+              <div className="flex justify-center flex-col">
+                <input 
+                  type="file" 
+                  className=" border-solid border-2 p-3 rounded-lg"
+                  accept="image/jpeg, image/jpg, image/png"
+                />
+                <p className="font-light text-xs text-gray-500">Accepted file types : JPEG, JPG, PNG</p>
+
+              </div>
+
+          </div>
+        ) : 
+        (
+        <div className="relative h-40 bg-cover bg-center">
           <img
-            src="../../../assets/UserPhotoDefault.jpeg"
+            src={Image1}
             alt="Profile"
             className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-32 h-32 rounded-full border-4 border-white object-cover"
           />
-        </div>
+        </div>)
+
+        }
+        
         <div className="mt-16 p-6 text-center">
           {isEditing ? (
             <>
@@ -68,11 +92,12 @@ const ProfilePage = () => {
               <button onClick={handleEdit} className="px-4 py-2 border rounded mr-2">
                 Edit profile
               </button>
-            </>
-          )}
-          <button className="px-4 py-2 bg-red-600 text-white rounded">
+              <button className="px-4 py-2 bg-red-600 text-white rounded">
             Upload Photo
           </button>
+            </>
+          )}
+          
         </div>
       </section>
 
