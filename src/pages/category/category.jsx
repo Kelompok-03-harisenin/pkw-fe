@@ -43,7 +43,7 @@ const index = () => {
           {isLoading ? (
             <div></div>
           ) : (apiData.photos.map((item) =>
-            < Card img={item.photo_url} key={item.id}  userImg={item.user_profile_picture} userName={item.user_name} userTitle={item.user_title} />
+            < Card imgID={item.id} img={item.photo_url} key={item.id}  userImg={item.user_profile_picture} userName={item.user_name} userTitle={item.user_title} />
           )
           )}
         </div>

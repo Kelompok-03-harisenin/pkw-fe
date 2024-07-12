@@ -11,12 +11,21 @@ import userDummyImg from '../../asset/images/userImg.png'
 import Card from '../../components/homepageCard/index.jsx'
 import axios from 'axios'
 
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import NavBar from '../../components/navbar/index.jsx'
 
 const index = () => {
+  const [categoryID, setCategoryID] = useState(1);
+  const [apiData, setApiData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  axios.get()
+  useEffect(() => {
+    axios.get(`http://localhost:3000/api/categories/${categoryID}`).then((res) => {
+      setApiData(res.data.data)
+      setIsLoading(false)
+    })
+  }, [ categoryID ])
 
   return (
     <>
@@ -73,29 +82,41 @@ const index = () => {
             </div>
             <div className='flex justify-center'>
               <ul className='flex gap-[32px] text-[#ADADAD] text-[28px] items-center'>
-                <li><button className='border-b-[1px] border-b-[#fff] p-[10px] hover:text-[#E60023] hover:border-b-[1px] hover:border-[#E60023] focus:text-[#E60023] focus:border-b-[1px] focus:border-[#E60023]' href="#">Nature</button></li>
-                <li><button className='border-b-[1px] border-b-[#fff] p-[10px] hover:text-[#E60023] hover:border-b-[1px] hover:border-[#E60023] focus:text-[#E60023] focus:border-b-[1px] focus:border-[#E60023]' href="#">Wallpaper</button></li>
-                <li><button className='border-b-[1px] border-b-[#fff] p-[10px] hover:text-[#E60023] hover:border-b-[1px] hover:border-[#E60023] focus:text-[#E60023] focus:border-b-[1px] focus:border-[#E60023]' href="#">Fashion</button></li>
-                <li><button className='border-b-[1px] border-b-[#fff] p-[10px] hover:text-[#E60023] hover:border-b-[1px] hover:border-[#E60023] focus:text-[#E60023] focus:border-b-[1px] focus:border-[#E60023]' href="#">Street Photography</button></li>
-                <li><button className='border-b-[1px] border-b-[#fff] p-[10px] hover:text-[#E60023] hover:border-b-[1px] hover:border-[#E60023] focus:text-[#E60023] focus:border-b-[1px] focus:border-[#E60023]' href="#">Travel</button></li>
-                <li><Link className='border-b-[1px] border-b-[#fff] p-[10px] hover:text-[#E60023] hover:border-b-[1px] hover:border-[#E60023] focus:text-[#E60023] focus:border-b-[1px] focus:border-[#E60023]' to={"/moreCategory"} href="#">More</Link></li>
+                <li><button onClick={() => setCategoryID(1)} className='border-b-[1px] border-b-[#fff] p-[10px] hover:text-[#E60023] hover:border-b-[1px] hover:border-[#E60023] focus:text-[#E60023] focus:border-b-[1px] focus:border-[#E60023]' href="#">Nature</button></li>
+                <li><button onClick={() => setCategoryID(2)} className='border-b-[1px] border-b-[#fff] p-[10px] hover:text-[#E60023] hover:border-b-[1px] hover:border-[#E60023] focus:text-[#E60023] focus:border-b-[1px] focus:border-[#E60023]' href="#">Wallpaper</button></li>
+                <li><button onClick={() => setCategoryID(3)} className='border-b-[1px] border-b-[#fff] p-[10px] hover:text-[#E60023] hover:border-b-[1px] hover:border-[#E60023] focus:text-[#E60023] focus:border-b-[1px] focus:border-[#E60023]' href="#">Fashion</button></li>
+                <li><button onClick={() => setCategoryID(4)} className='border-b-[1px] border-b-[#fff] p-[10px] hover:text-[#E60023] hover:border-b-[1px] hover:border-[#E60023] focus:text-[#E60023] focus:border-b-[1px] focus:border-[#E60023]' href="#">Street Photography</button></li>
+                <li><button onClick={() => setCategoryID(5)} className='border-b-[1px] border-b-[#fff] p-[10px] hover:text-[#E60023] hover:border-b-[1px] hover:border-[#E60023] focus:text-[#E60023] focus:border-b-[1px] focus:border-[#E60023]' href="#">Travel</button></li>
+                <li><button onClick={() => setCategoryID(6)} className='border-b-[1px] border-b-[#fff] p-[10px] hover:text-[#E60023] hover:border-b-[1px] hover:border-[#E60023] focus:text-[#E60023] focus:border-b-[1px] focus:border-[#E60023]' href="#">People</button></li>
+                <li><button onClick={() => setCategoryID(7)} className='border-b-[1px] border-b-[#fff] p-[10px] hover:text-[#E60023] hover:border-b-[1px] hover:border-[#E60023] focus:text-[#E60023] focus:border-b-[1px] focus:border-[#E60023]' href="#">Etc</button></li>
               </ul>
             </div>
+            {
+              isLoading ? (
+                  <div className='flex flex-col gap-[31px] w-[1080px]'>
+                <div className='flex flex-col gap-[5px]'>
+                  <h1 className='text-[45px] font-semibold'></h1>
+                </div>
 
-            <div className='flex flex-col gap-[31px] w-[1080px]'>
-              <div className='flex flex-col gap-[5px]'>
-                <h1 className='text-[45px] font-semibold'>Nature</h1>
-                <p className='text-[22px] font-normal'>Footsteps on Earth, Breathing Peace into Every Leaf</p>
+                <div className='flex gap-[15px] flex-wrap'>
+                </div>
               </div>
+              ) : (
+                <div className='flex flex-col gap-[31px] w-[1080px]'>
+                <div className='flex flex-col gap-[5px]'>
+                  <h1 className='text-[45px] font-semibold'>{apiData.category_name}</h1>
+                </div>
 
-              <div className='flex gap-[15px] flex-wrap'>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
+                <div className='flex gap-[15px] flex-wrap justify-center'>
+                  {
+                    apiData.photos.map((item) =>
+                      < Card imgID={item.id} img={item.photo_url} key={item.id}  userImg={item.user_profile_picture} userName={item.user_name} userTitle={item.user_title} />
+                    )
+                  }
+                </div>
               </div>
-            </div>
-
+              )
+            }
           </div>
           {/* end category Section */}
         </div>
