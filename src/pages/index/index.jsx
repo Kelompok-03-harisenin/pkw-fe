@@ -21,7 +21,7 @@ const index = () => {
   return (
     <>
       <NavBar />
-      <div className='flex justify-center font-inter'>
+      <div className='flex justify-center font-inter mb-10'>
         <div className='flex flex-col w-fit overflow-hidden'>
 
           <div>
