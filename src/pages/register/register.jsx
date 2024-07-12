@@ -25,8 +25,10 @@ const register = () => {
       name: name,
       email: email,
       password: password
-    }).then((_res) => {
-      return navigate("/login")
+    }).then((res) => {
+      if (res.status == 201) {
+        return navigate("/login")
+      }
     })
   }
 
