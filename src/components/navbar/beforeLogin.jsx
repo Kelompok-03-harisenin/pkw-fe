@@ -14,10 +14,10 @@ const index = () => {
               <div className="flex items-start flex-col justify-end pt-[0] px-[24px]">
                 <div className="flex items-start flex-direction: row; justify-content: flex-start; gap: 10px;">
                   <button className="cursor-pointer border-[0] px-[30px] py-[10px] bg-transparent rounded-[4px] flex flex-row items-start justify-start">
-                    <a className="no-underline relative text-[18px] text-[#e60023] text-left flex min-w-[47px] whitespace-nowrap cursor-pointer hover:text-[#ff264a]">Login</a>
+                    <Link to={"/login"} className="no-underline relative text-[18px] text-[#e60023] text-left flex min-w-[47px] whitespace-nowrap cursor-pointer hover:text-[#ff264a]">Login</Link>
                   </button>
                   <button className="cursor-pointer border-[0] px-[30px] py-[10px] bg-[#e60023] flex-row justify-start hover:bg-[#ff264a]">
-                    <a className="no-underline flex justify-center relative text-[18px] text-[#fff] text-left min-w-[71px] whitespace-nowrap">Register</a>
+                    <Link to={"/register"} className="no-underline flex justify-center relative text-[18px] text-[#fff] text-left min-w-[71px] whitespace-nowrap">Register</Link>
                   </button>
                 </div>
               </div>

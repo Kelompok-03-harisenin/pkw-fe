@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom"
+
 const index = () => {
-    return (
-        <div className="w-full relative overflow-hidden items-center pt-[40px] px-[440px] pb-[218px] gap-[63.3px] leading-[normal] tracking-[normal] text-left text-[24px] text-[#000]">
+  return (
+    <div className="w-full relative overflow-hidden pt-[40px] px-[440px] pb-[218px] gap-[63.3px] leading-[normal] tracking-[normal] text-left text-[24px] text-[#000] items-center">
       <div className="w-[600px] h-[468px] [box-shadow:0_4px_24px_rgba(0,_0,_0,_0.25)] rounded-[24px] items-start pt-[48px] px-[73px] pb-[63px] gap-[40px] max-w-full">
         <div className="flex flex-row items-start justify-start pt-[0] px-[0] pb-[20px] text-[28px]">
           <h1>Log in</h1>
@@ -31,13 +33,13 @@ const index = () => {
           <div className="">
             <div className="relative text-[20px] text-[#000]">Don’t have an account ?</div>
           </div>
-          <button>
+          <Link to={"/register"}>
             <div className="relative text-[20px] text-[#000]">Sign up</div>
-          </button>
+          </Link>
         </div>
       </div>
     </div>
-    )
+  )
 }
 
 export default index
