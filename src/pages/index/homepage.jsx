@@ -8,10 +8,16 @@ import monumentImg from '../../asset/images/monument.png'
 import buildingImg from '../../asset/images/building.png'
 import dummyImg from '../../asset/images/natureDummy.png'
 import userDummyImg from '../../asset/images/userImg.png'
+import Card from '../../components/homepageCard/index.jsx'
+import axios from 'axios'
+
 import { Link } from 'react-router-dom'
 import NavBar from '../../components/navbar/index.jsx'
 
 const index = () => {
+
+    axios.get()
+
     return(
         <>
 <div className='flex justify-center font-inter'>
@@ -82,119 +88,10 @@ const index = () => {
         </div>
 
         <div className='flex gap-[15px] flex-wrap'>
-            <div className='flex flex-col gap-[10px]'>
-                <div className='overflow-hidden w-[251px] h-[377px]'>
-                    <img className='hover:scale-[1.1] ease-in-out duration-300' src={dummyImg} alt="" />
-                </div>
-                <div className='flex items-center gap-[7px]'>
-                    <div>
-                        <img src={userDummyImg} alt="" />
-                    </div>
-                    <div>
-                        <span className='text-[13px] font-medium'>Username</span>
-                        <p className='text-[10px] font-normal text-[#BABABA]'>Photographer</p>
-                    </div>
-                </div>
-            </div>   
-            <div className='flex flex-col gap-[10px]'>
-                <div className='overflow-hidden w-[251px] h-[377px]'>
-                    <img className='hover:scale-[1.1] ease-in-out duration-300' src={dummyImg} alt="" />
-                </div>
-                <div className='flex items-center gap-[7px]'>
-                    <div>
-                        <img src={userDummyImg} alt="" />
-                    </div>
-                    <div>
-                        <span className='text-[13px] font-medium'>Username</span>
-                        <p className='text-[10px] font-normal text-[#BABABA]'>Photographer</p>
-                    </div>
-                </div>
-            </div>   
-            <div className='flex flex-col gap-[10px]'>
-                <div className='overflow-hidden w-[251px] h-[377px]'>
-                    <img className='hover:scale-[1.1] ease-in-out duration-300' src={dummyImg} alt="" />
-                </div>
-                <div className='flex items-center gap-[7px]'>
-                    <div>
-                        <img src={userDummyImg} alt="" />
-                    </div>
-                    <div>
-                        <span className='text-[13px] font-medium'>Username</span>
-                        <p className='text-[10px] font-normal text-[#BABABA]'>Photographer</p>
-                    </div>
-                </div>
-            </div>   
-            <div className='flex flex-col gap-[10px]'>
-                <div className='overflow-hidden w-[251px] h-[377px]'>
-                    <img className='hover:scale-[1.1] ease-in-out duration-300' src={dummyImg} alt="" />
-                </div>
-                <div className='flex items-center gap-[7px]'>
-                    <div>
-                        <img src={userDummyImg} alt="" />
-                    </div>
-                    <div>
-                        <span className='text-[13px] font-medium'>Username</span>
-                        <p className='text-[10px] font-normal text-[#BABABA]'>Photographer</p>
-                    </div>
-                </div>
-            </div>   
-            <div className='flex flex-col gap-[10px]'>
-                <div className='overflow-hidden w-[251px] h-[377px]'>
-                    <img className='hover:scale-[1.1] ease-in-out duration-300' src={dummyImg} alt="" />
-                </div>
-                <div className='flex items-center gap-[7px]'>
-                    <div>
-                        <img src={userDummyImg} alt="" />
-                    </div>
-                    <div>
-                        <span className='text-[13px] font-medium'>Username</span>
-                        <p className='text-[10px] font-normal text-[#BABABA]'>Photographer</p>
-                    </div>
-                </div>
-            </div>   
-            <div className='flex flex-col gap-[10px]'>
-                <div className='overflow-hidden w-[251px] h-[377px]'>
-                    <img className='hover:scale-[1.1] ease-in-out duration-300' src={dummyImg} alt="" />
-                </div>
-                <div className='flex items-center gap-[7px]'>
-                    <div>
-                        <img src={userDummyImg} alt="" />
-                    </div>
-                    <div>
-                        <span className='text-[13px] font-medium'>Username</span>
-                        <p className='text-[10px] font-normal text-[#BABABA]'>Photographer</p>
-                    </div>
-                </div>
-            </div>   
-            <div className='flex flex-col gap-[10px]'>
-                <div className='overflow-hidden w-[251px] h-[377px]'>
-                    <img className='hover:scale-[1.1] ease-in-out duration-300' src={dummyImg} alt="" />
-                </div>
-                <div className='flex items-center gap-[7px]'>
-                    <div>
-                        <img src={userDummyImg} alt="" />
-                    </div>
-                    <div>
-                        <span className='text-[13px] font-medium'>Username</span>
-                        <p className='text-[10px] font-normal text-[#BABABA]'>Photographer</p>
-                    </div>
-                </div>
-            </div>   
-            <div className='flex flex-col gap-[10px]'>
-                <div className='overflow-hidden w-[251px] h-[377px]'>
-                    <img className='hover:scale-[1.1] ease-in-out duration-300' src={dummyImg} alt="" />
-                </div>
-                <div className='flex items-center gap-[7px]'>
-                    <div>
-                        <img src={userDummyImg} alt="" />
-                    </div>
-                    <div>
-                        <span className='text-[13px] font-medium'>Username</span>
-                        <p className='text-[10px] font-normal text-[#BABABA]'>Photographer</p>
-                    </div>
-                </div>
-            </div>   
-            
+        <Card></Card>   
+        <Card></Card>   
+        <Card></Card>   
+        <Card></Card>              
         </div>
     </div>
 
