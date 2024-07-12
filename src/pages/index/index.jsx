@@ -12,7 +12,7 @@ import Card from '../../components/homepageCard/index.jsx'
 import axios from 'axios'
 
 import { Link } from 'react-router-dom'
-import NavBar from '../../components/navbar/afterLogin.jsx'
+import NavBar from '../../components/navbar/index.jsx'
 
 const index = () => {
 

@@ -1,9 +1,21 @@
-import dummyImg from '../../asset/images/natureDummy.png'
-import userDummyImg from '../../asset/images/userImg.png'
 import Card from '../../components/morecategoryCard/index.jsx'
 import NavBar from '../../components/navbar/index.jsx'
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const index = () => {
+  const { categoryID } = useParams();
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    axios.get(`http://localhost:3000/api/categories/${categoryID}`).then((res) => {
+      setData(res)
+      setIsLoading(false)
+    })
+  }, [])
+
   return (
     <>
       <NavBar></NavBar>
@@ -20,18 +32,20 @@ const index = () => {
           </div>
         </div>
 
+        < div>
+          {
+            isLoading ? (<div></div>) : (<h2 className='text-[40px] font-semibold text-center'>{data.data.data.category_name}</h2>)
+          }
+        </div>
+
         {/* card all category */}
-        <div className='px-[150px] flex flex-wrap gap-[15px] pt-[151px]'>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-
-
+        <div className='px-[150px] justify-center flex flex-wrap gap-[15px] pt-[151px] mb-10'>
+          {isLoading ? (
+            <div></div>
+          ) : (data.data.data.photos.map((item) =>
+            < Card img={item.photo_url} userImg={item.user_profile_picture} userName={item.user_name} userTitle={item.user_title} />
+          )
+          )}
         </div>
       </div>
     </>
