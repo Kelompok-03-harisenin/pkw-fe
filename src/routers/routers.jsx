@@ -6,6 +6,7 @@ import Upload from "../pages/upload/upload";
 import Delete from "../pages/delete/delete";
 import Preview from "../pages/preview/preview";
 
+import MoreCategory from "../pages/moreCategory/moreCategory.jsx"
 const routers = () => {
     const router = createBrowserRouter([
         {
@@ -31,7 +32,12 @@ const routers = () => {
         {
             path: "/userProfile",
             element: <UserProfile/>
-        }
+        },  
+        {
+            path: "/moreCategory",
+            element: <MoreCategory/>
+        },
+       
     ])
 
     return (
