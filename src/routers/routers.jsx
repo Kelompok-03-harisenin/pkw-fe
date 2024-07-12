@@ -27,7 +27,7 @@ const routers = () => {
     }
     ,
     {
-      path: "/preview",
+      path: "/preview/:photoID",
       element: <PreviewPage />
     },
 

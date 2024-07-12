@@ -1,5 +1,19 @@
 import Navbar from "../../components/navbar/index"
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+
 const index = () => {
+  const { photoID } = useParams();
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    axios.get("")
+  }, [])
+
+
+
   return (
     <div>
       <Navbar />

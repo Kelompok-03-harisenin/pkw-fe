@@ -6,15 +6,15 @@ import axios from 'axios';
 
 const index = () => {
   const { categoryID } = useParams();
-  const [data, setData] = useState(null);
+  const [apiData, setApiData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     axios.get(`http://localhost:3000/api/categories/${categoryID}`).then((res) => {
-      setData(res)
+      setApiData(res.data.data)
       setIsLoading(false)
     })
-  }, [])
+  }, [ categoryID ])
 
   return (
     <>
@@ -34,7 +34,7 @@ const index = () => {
 
         < div>
           {
-            isLoading ? (<div></div>) : (<h2 className='text-[40px] font-semibold text-center'>{data.data.data.category_name}</h2>)
+            isLoading ? (<div></div>) : (<h2 className='text-[40px] font-semibold text-center'>{apiData.category_name}</h2>)
           }
         </div>
 
@@ -42,8 +42,8 @@ const index = () => {
         <div className='px-[150px] justify-center flex flex-wrap gap-[15px] pt-[151px] mb-10'>
           {isLoading ? (
             <div></div>
-          ) : (data.data.data.photos.map((item) =>
-            < Card img={item.photo_url} userImg={item.user_profile_picture} userName={item.user_name} userTitle={item.user_title} />
+          ) : (apiData.photos.map((item) =>
+            < Card img={item.photo_url} key={item.id}  userImg={item.user_profile_picture} userName={item.user_name} userTitle={item.user_title} />
           )
           )}
         </div>
