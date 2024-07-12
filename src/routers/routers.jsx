@@ -1,37 +1,39 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Index from "../pages/index";
-import UserProfile from "../pages/index/UserProfile/userProfile";
-import Homepage from "../pages/index/homepage";
-import Upload from "../pages/upload/upload";
-import Delete from "../pages/delete/delete";
-import Preview from "../pages/preview/preview";
+import ProfilePage from "../pages/profile/profile.jsx";
+import Homepage from "../pages/index/index.jsx";
+import UploadPage from "../pages/uploadPhoto/uploadPhoto.jsx";
+import DeletePage from "../pages/editPhoto/editPhoto.jsx";
+import PreviewPage from "../pages/previewPhoto/previewPhoto.jsx";
 
-import MoreCategory from "../pages/moreCategory/moreCategory.jsx"
+import MoreCategory from "../pages/category/category.jsx"
 const routers = () => {
     const router = createBrowserRouter([
         {
             path: "/",
             element: <Homepage/>
-        }
-        ,
+        },
+        {
+            path: "",
+            element: <></>
+        },
         {
             path: "/upload",
-            element: <Upload/>
+            element: <UploadPage/>
         }
         ,
         {
             path: "/delete",
-            element: <Delete/>
+            element: <DeletePage/>
         }
         ,
         {
             path: "/preview",
-            element: <Preview/>
+            element: <PreviewPage/>
         },
 
         {
             path: "/userProfile",
-            element: <UserProfile/>
+            element: <ProfilePage/>
         },  
         {
             path: "/moreCategory",
