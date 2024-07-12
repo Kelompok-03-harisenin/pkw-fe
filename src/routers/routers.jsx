@@ -34,7 +34,7 @@ const routers = () => {
     },
 
     {
-      path: "/userProfile",
+      path: "/user/:userID",
       element: <ProfilePage />
     },
     {

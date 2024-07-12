@@ -36,9 +36,9 @@ const index = () => {
     return (
       <div>
         {isLoading ? (
-          < AfterLogin profile_photo={""} />
+          < AfterLogin profile_photo={""} userID={""} />
         ) : (
-          < AfterLogin profile_photo={apiData.profile_picture} />
+          < AfterLogin profile_photo={apiData.profile_picture} userID={apiData.id} />
         )}
       </div>
     )
