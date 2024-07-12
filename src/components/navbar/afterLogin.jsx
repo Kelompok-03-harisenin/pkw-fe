@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom'
 import Image1 from '../../assets/layer-2.svg'
-import ProfilePic from '../../assets/photo-1543610892-0b1f7e6d8ac1.avif'
+import UseAuthStore from '../../store/authStore.js'
 
-const afterLogin = () => {
+const afterLogin = (props) => {
+  const removejwt = () => {
+    UseAuthStore.setState(() => ({ jwt: null }))
+  }
+  
   return (
     <header className="w-full bg-[#f7f7f7] overflow-hidden items-center pt-[51px] px-[0] pb-[0] gap-[78px] leading-[normal] tracking-[normal] flex justify-center">
       <section className="w-[1260px] flex-row justify-end pt-[0] pl-[74px] pr-[74px] pb-[25px] box-border">
@@ -14,11 +18,11 @@ const afterLogin = () => {
               </Link>
               <div className="flex items-start flex-col justify-end pt-[0] px-[0]">
                 <div className="flex items-start  flex-direction: row; justify-content: flex-start; gap: 10px;">
-                  <Link to="/userProfile" className='cursor-pointer w-[40px] flex [clip-path:circle()]'>
-                    <img src={ProfilePic} alt="" />
+                  <Link to="/userProfile" className='cursor-pointer w-[40px] h-[40px] flex [clip-path:circle()]'>
+                    <img src={props.profile_photo} alt="" />
                   </Link>
                   <button className="cursor-pointer border-[0] px-[60px] pt-[20px] flex-row justify-start">
-                    <Link to="" className="no-underline justify-center relative text-[18px] text-[#e60023] text-left flex min-w-[71px] whitespace-nowrap hover:text-[#ff264a]">Log out</Link>
+                    <button onClick={removejwt} className="no-underline justify-center relative text-[18px] text-[#e60023] text-left flex min-w-[71px] whitespace-nowrap hover:text-[#ff264a]">Log out</button>
                   </button>
                 </div>
               </div>
