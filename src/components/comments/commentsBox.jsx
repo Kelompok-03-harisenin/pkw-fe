@@ -13,7 +13,7 @@ const commentsBox = (props) => {
         <div className="overflow-scroll overflow-x-hidden w-[450px] h-[500px]">
           {
             apiData.map(item => (
-              < Comment key={item.id} name={item.userName} photo_url={item.userPicture} title={item.userTitle} comment={item.comment} />
+              < Comment key={item.id} userID={item.userID} name={item.userName} photo_url={item.userPicture} title={item.userTitle} comment={item.comment} />
             ))
           }
         </div>

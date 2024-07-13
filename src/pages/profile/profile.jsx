@@ -21,6 +21,7 @@ const ProfilePage = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isCurrentUser, setIsCurrentUser] = useState(false)
   const [photo, setPhoto] = useState(null)
+  const [userPhotos, setUserPhotos] = useState([])
 
   useEffect(() => {
     if (jwt == null) {
@@ -64,7 +65,14 @@ const ProfilePage = () => {
           title: data.title,
           biography: data.biography
         })
-        setIsLoading(false)
+        axios.get(`http://localhost:3000/api/users/${userID}/photos`, {}).then(
+          res => {
+            if (res.status == 200) {
+              setUserPhotos(res.data.data)
+              setIsLoading(false)
+            }
+          }
+        )
       }
     })
   }, [isLoading, userID])
@@ -216,12 +224,15 @@ const ProfilePage = () => {
       <section className="max-w-7xl mx-auto mt-8 px-4 pb-8">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
 
-          {Array.from({ length: 20 }).map((_, index) => (
-            <div key={index} className="aspect-square bg-gray-200 rounded-md overflow-hidden">
+          {userPhotos.map((item) => (
+            <div key={item.id} className="aspect-square bg-gray-200 rounded-md overflow-hidden">
               <img
-                src={`https://via.placeholder.com/300x300?text=Photo${index + 1}`}
-                alt={`Photo ${index + 1}`}
+                src={item.photo_url}
+                alt={item.title}
                 className="w-full h-full object-cover"
+                onClick={() => {
+                  navigate(`/preview/${item.id}`)
+                }}
               />
             </div>
           ))}

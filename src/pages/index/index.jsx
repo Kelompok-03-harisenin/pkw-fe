@@ -25,7 +25,7 @@ const index = () => {
       setApiData(res.data.data)
       setIsLoading(false)
     })
-  }, [ categoryID ])
+  }, [categoryID])
 
   return (
     <>
@@ -93,28 +93,28 @@ const index = () => {
             </div>
             {
               isLoading ? (
-                  <div className='flex flex-col gap-[31px] w-[1080px]'>
-                <div className='flex flex-col gap-[5px]'>
-                  <h1 className='text-[45px] font-semibold'></h1>
-                </div>
+                <div className='flex flex-col gap-[31px] w-[1080px]'>
+                  <div className='flex flex-col gap-[5px]'>
+                    <h1 className='text-[45px] font-semibold'></h1>
+                  </div>
 
-                <div className='flex gap-[15px] flex-wrap'>
+                  <div className='flex gap-[15px] flex-wrap'>
+                  </div>
                 </div>
-              </div>
               ) : (
                 <div className='flex flex-col gap-[31px] w-[1080px]'>
-                <div className='flex flex-col gap-[5px]'>
-                  <h1 className='text-[45px] font-semibold'>{apiData.category_name}</h1>
-                </div>
+                  <div className='flex flex-col gap-[5px]'>
+                    <h1 className='text-[45px] font-semibold'>{apiData.category_name}</h1>
+                  </div>
 
-                <div className='flex gap-[15px] flex-wrap justify-center'>
-                  {
-                    apiData.photos.map((item) =>
-                      < Card imgID={item.id} img={item.photo_url} key={item.id}  userImg={item.user_profile_picture} userName={item.user_name} userTitle={item.user_title} />
-                    )
-                  }
+                  <div className='flex gap-[15px] flex-wrap justify-center'>
+                    {
+                      apiData.photos.map((item) =>
+                        < Card imgID={item.id} img={item.photo_url} key={item.id} userImg={item.user_profile_picture} userID={item.user_id} userName={item.user_name} userTitle={item.user_title} />
+                      )
+                    }
+                  </div>
                 </div>
-              </div>
               )
             }
           </div>
