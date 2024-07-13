@@ -19,7 +19,7 @@ const afterLogin = (props) => {
               <div className="flex items-start flex-col justify-end pt-[0] px-[0]">
                 <div className="flex items-start  flex-direction: row; justify-content: flex-start; gap: 10px;">
                   <Link to={`/user/${props.userID}`} className='cursor-pointer w-[40px] h-[40px] flex [clip-path:circle()]'>
-                    <img src={props.profile_photo} alt="" />
+                    <img src={props.profile_photo} className='w-[40px] h-[40px]' alt="" />
                   </Link>
                   <div className="flex items-center cursor-pointer border-[0] px-[60px] pt-[10px] pb-[10px] flex-row justify-center">
                     <button onClick={removejwt} className=" no-underline justify-center text-[18px] items-center text-[#e60023] text-left flex min-w-[71px] whitespace-nowrap hover:text-[#ff264a]">Log out</button>
