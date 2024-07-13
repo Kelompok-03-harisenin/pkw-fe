@@ -171,32 +171,35 @@ const ProfilePage = () => {
 
         <div className="mt-16 p-6 text-center">
           {isEditing ? (
-            <>
+            <div className='flex flex-col justify-center items-center'>
+              <p className='text-start p-2 w-96'> Name </p>
               <input
                 type="text"
                 name="name"
                 value={profileData.name}
                 onChange={handleChange}
-                className="text-2xl font-bold mb-2 text-center"
+                className="bg-[#f8f8f8] border-2 border-solid border-gray-300 transition-all ring-0 outline-none focus:ring-0 focus:transition-all resize-none grow h-11 w-96 px-4 py-2 rounded focus:outline-none "
               />
+              <p className='text-start p-2 w-96'> Title </p>
               <input
                 type="text"
                 name="title"
                 value={profileData.title}
                 onChange={handleChange}
-                className="text-gray-600 mb-4 text-center"
+                className="bg-[#f8f8f8] border-2 border-solid border-gray-300 transition-all ring-0 outline-none focus:ring-0 focus:transition-all resize-none grow h-11 w-96 px-4 py-2 rounded focus:outline-none "
               />
+              <p className='text-start p-2 w-96'> Biography </p>
               <textarea
                 name="biography"
                 value={profileData.biography}
                 onChange={handleChange}
-                className="w-full p-2 border rounded"
+                className="bg-[#f8f8f8] border-2 border-solid border-gray-300 transition-all ring-0 outline-none focus:ring-0 focus:transition-all resize-none grow h-40 w-96 px-4 py-2 rounded focus:outline-none "
                 rows="4"
               />
               <button onClick={handleSave} className="mt-4 px-4 py-2 bg-blue-600 text-white rounded">
                 Save
               </button>
-            </>
+            </div>
           ) : (
             <>
               <h1 className="text-2xl font-bold mb-2">{profileData.name}</h1>
@@ -229,7 +232,7 @@ const ProfilePage = () => {
               <img
                 src={item.photo_url}
                 alt={item.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover hover:cursor-pointer"
                 onClick={() => {
                   navigate(`/preview/${item.id}`)
                 }}
