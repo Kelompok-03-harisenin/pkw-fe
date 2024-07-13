@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import Image1 from '../../assets/layer-2.svg'
 import Navbar from '../../components/navbar/index'
 import UseAuthStore from '../../store/authStore.js'
 import { useParams, useNavigate } from 'react-router-dom';

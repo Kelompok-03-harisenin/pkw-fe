@@ -107,7 +107,7 @@ const index = () => {
         (
           <div>
             <div className="flex flex-col justify-center items-center min-h-screen bg-gray-100">
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-row w-full h-full max-w-5xl">
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden flex items-center justify-center flex-row w-full h-full max-w-5xl">
                 <div className="p-4 flex items-center">
                   <img
                     className=""
