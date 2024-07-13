@@ -3,10 +3,11 @@ import { useEffect } from 'react';
 import Image1 from '../../assets/layer-2.svg'
 import Navbar from '../../components/navbar/index'
 import UseAuthStore from '../../store/authStore.js'
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from "axios"
 
 const ProfilePage = () => {
+  const navigate = useNavigate()
   const { userID } = useParams()
   const [isEditing, setIsEditing] = useState(false);
   const [profileData, setProfileData] = useState({
@@ -73,9 +74,7 @@ const ProfilePage = () => {
   * @param {React.ChangeEvent<HTMLInputElement>} e
   */
   const handleFileChange = (e) => {
-    if (e.target.files) {
-      setPhoto(e.target.files[0])
-    }
+    setPhoto(e.target.files[0])
   }
 
   const handleEdit = () => {
@@ -84,14 +83,11 @@ const ProfilePage = () => {
 
   const handleSave = () => {
     if (photo) {
-      let formData = new FormData();
-      formData.append('image', photo)
-      console.log(photo)
-
       axios.patch(`http://localhost:3000/api/users/${userID}`, {
         image: photo
       }, {
         headers: {
+          "Content-Type": 'multipart/form-data',
           Authorization: `Bearer ${jwt}`
         }
       }).then(res => {
@@ -119,6 +115,10 @@ const ProfilePage = () => {
     const { name, value } = e.target;
     setProfileData(prev => ({ ...prev, [name]: value }));
   };
+
+  const handleUpload = (_e => {
+    return navigate("/upload")
+  })
 
   if (isLoading == true) {
     return (
@@ -201,7 +201,7 @@ const ProfilePage = () => {
                     <button onClick={handleEdit} className="px-4 py-2 border rounded mr-2">
                       Edit profile
                     </button>
-                    <button className="px-4 py-2 bg-red-600 text-white rounded">
+                    <button onClick={handleUpload} className="px-4 py-2 bg-red-600 text-white rounded">
                       Upload Photo
                     </button>
                   </div>
