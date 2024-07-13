@@ -21,8 +21,8 @@ const afterLogin = (props) => {
                   <Link to={`/user/${props.userID}`} className='cursor-pointer w-[40px] h-[40px] flex [clip-path:circle()]'>
                     <img src={props.profile_photo} alt="" />
                   </Link>
-                  <div className="cursor-pointer border-[0] px-[60px] pt-[20px] flex-row justify-start">
-                    <button onClick={removejwt} className="no-underline justify-center relative text-[18px] text-[#e60023] text-left flex min-w-[71px] whitespace-nowrap hover:text-[#ff264a]">Log out</button>
+                  <div className="flex items-center cursor-pointer border-[0] px-[60px] pt-[10px] pb-[10px] flex-row justify-center">
+                    <button onClick={removejwt} className=" no-underline justify-center text-[18px] items-center text-[#e60023] text-left flex min-w-[71px] whitespace-nowrap hover:text-[#ff264a]">Log out</button>
                   </div>
                 </div>
               </div>
