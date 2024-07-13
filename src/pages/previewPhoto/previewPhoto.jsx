@@ -1,12 +1,13 @@
 import Navbar from "../../components/navbar/index"
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import UseAuthStore from '../../store/authStore.js'
 import CommentsBox from "../../components/comments/commentsBox.jsx";
 import axios from "axios";
 
 
 const index = () => {
+  const navigate = useNavigate()
   const jwt = UseAuthStore((state) => state.jwt);
   const { photoID } = useParams();
   const [apiData, setApiData] = useState(null);
@@ -99,6 +100,10 @@ const index = () => {
     setIsShowingComments(false)
   }
 
+  const handleUserClick = () => {
+    navigate(`/user/${apiData.userID}`)
+  }
+
 
   return (
     <div>
@@ -124,7 +129,7 @@ const index = () => {
                   <p className="text-gray-700 mb-4 min-w-[300px]">
                     {apiData.description}
                   </p>
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center mb-4 hover:cursor-pointer" onClick={handleUserClick}>
                     <img
                       className="w-8 h-8 rounded-full mr-2"
                       src={apiData.userProfilePicture} // Replace this with the correct path to the profile image
