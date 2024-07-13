@@ -12,6 +12,8 @@ const index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isLiked, setIsLiked] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [commentValue, setCommentValue] = useState("");
+  const [commentsApiData, setCommentsApiData] = useState(null);
 
   useEffect(() => {
     if (jwt == null) {
@@ -36,10 +38,15 @@ const index = () => {
             }
           })
         }
+        axios.get(`http://localhost:3000/api/comments/photo/${photoID}`).then(res => {
+          if (res.status == 200) {
+            setCommentsApiData(res.data.data)
+          }
+        })
         setIsLoading(false)
       }
     })
-  }, [isLoading, photoID, isLiked, isLoggedIn])
+  }, [isLoading, photoID, isLoggedIn])
 
   const handleLike = () => {
     if (isLiked == false) {
@@ -61,13 +68,34 @@ const index = () => {
     }
   }
 
+  const handleComment = () => {
+    if (commentValue == "") {
+      return
+    }
+
+    if (isLoggedIn == false) {
+      return
+    }
+
+    axios.post(`http://localhost:3000/api/comments/photo/${photoID}`, {
+      comment: commentValue
+    }, {
+      headers: {
+        Authorization: `Bearer ${jwt}`
+      }
+    }).then(() => {
+      setCommentValue("")
+      setIsLoading(true)
+    })
+  }
+
 
   return (
     <div>
       <Navbar />
       {isLoading ? (<div></div>) :
         (
-          <div className="flex justify-center items-center min-h-screen bg-gray-100">
+          <div className="flex flex-col justify-center items-center min-h-screen bg-gray-100">
             <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-row w-full h-full max-w-5xl">
               <div className="p-4 flex items-center">
                 <img
@@ -126,12 +154,21 @@ const index = () => {
                 </div>
                 {
                   isLoggedIn ? (
-                    <div className="mt-4">
-                      <input
+                    <div className="flex mt-4">
+                      <textarea
                         type="text"
-                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="focus:h-24 transition-all focus:transition-all resize-none grow h-11 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Add a comment"
+                        value={commentValue}
+                        onChange={e => setCommentValue(e.target.value)}
                       />
+                      <button
+                        className="h-11 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        type="submit"
+                        onClick={handleComment}
+                      >
+                        Submit
+                      </button>
                     </div>
                   ) : (
                     <div className="mt-4">
@@ -146,9 +183,14 @@ const index = () => {
                 }
 
                 <div className="mt-2 text-blue-500">
-                  <a href="#">See 5 Comment</a>
+                  <button
+
+                  >{`See ${apiData.commentsCount} Comment`}</button>
                 </div>
               </div>
+            </div>
+            <div>
+              hello world
             </div>
           </div>
         )
